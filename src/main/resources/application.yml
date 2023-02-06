@@ -33,9 +33,9 @@ spring:
     time-zone: GMT+8
   #redis
   redis:
-    host: www.leige.tech
+    host: 101.132.141.208
     password: 123456
-    port: 6390
+    port: 6379
     jedis:
       pool:
         max-active: 20
@@ -51,6 +51,7 @@ shiro:
   login-url: /index.html
   unauthorized-url: /unauthorized.html
   anon-urls:
+    - /**
     - /api/login/doLogin*
     - /api/druid/**
     - /api/swagger-ui.html
@@ -61,7 +62,7 @@ shiro:
     - /api/login/checkLogin
   logout-url: /api/login/logout*
   authc-urls:
-    - /**
+#    - /**
 #mybatisplus的配置
 mybatis-plus:
   configuration:
