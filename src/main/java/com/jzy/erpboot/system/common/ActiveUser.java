@@ -1,5 +1,6 @@
 package com.jzy.erpboot.system.common;
 
+import com.jzy.erpboot.system.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ActiveUser implements Serializable {
 
-//    private User user;
+    private User user;
     private List<String> roles;
     private List<String> permissions;
 
