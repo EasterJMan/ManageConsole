@@ -28,6 +28,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 @Controller
+@CrossOrigin
 @RequestMapping("login")
 public class LoginController {
 
