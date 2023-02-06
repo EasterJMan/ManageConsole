@@ -2,6 +2,7 @@ package com.jzy.erpboot.system.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.jzy.erpboot.system.common.Constant;
 import com.jzy.erpboot.system.common.DataGridView;
 import com.jzy.erpboot.system.domain.Menu;
 import com.jzy.erpboot.system.mapper.MenuMapper;
@@ -23,8 +24,17 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
 
     @Override
     public List<Menu> queryAllMenuForList() {
-
-        return null;
+        //使用mybatisplus查询，available状态为1可用，并且type为顶层菜单(topmenu)或者左侧菜单(leftmenu)
+        QueryWrapper<Menu> wrapper = new QueryWrapper<>();
+        wrapper.eq("available", Constant.AVAILABLE_TRUE);
+        wrapper.and(new Consumer<QueryWrapper<Menu>>() {
+            @Override
+            public void accept(QueryWrapper<Menu> menuQueryWrapper) {
+                menuQueryWrapper.eq("type", Constant.MENU_TYPE_TOP).or().eq("type", Constant.MENU_TYPE_LEFT);
+            }
+        });
+        wrapper.orderByAsc("ordernum");
+        return this.menuMapper.selectList(wrapper);
     }
 
     /**
@@ -33,8 +43,17 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
      */
     @Override
     public List<Menu> queryMenuForListByUserId(Integer id) {
-
-        return null;
+        //使用mybatisplus查询，available状态为1可用，并且type为顶层菜单(topmenu)或者左侧菜单(leftmenu)
+        QueryWrapper<Menu> wrapper = new QueryWrapper<>();
+        wrapper.eq("available", Constant.AVAILABLE_TRUE);
+        wrapper.and(new Consumer<QueryWrapper<Menu>>() {
+            @Override
+            public void accept(QueryWrapper<Menu> menuQueryWrapper) {
+                menuQueryWrapper.eq("type", Constant.MENU_TYPE_TOP).or().eq("type", Constant.MENU_TYPE_LEFT);
+            }
+        });
+        wrapper.orderByAsc("ordernum");
+        return this.menuMapper.selectList(wrapper);
     }
 
     @Override
