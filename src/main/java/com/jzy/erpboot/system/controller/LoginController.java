@@ -109,4 +109,18 @@ public class LoginController {
 
         return nodesMap;
     }
+
+    /**
+     * 验证当前token是否登陆
+     */
+    @RequestMapping("checkLogin")
+    @ResponseBody
+    public ResultObj checkLogin(){
+        Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated()){
+            return ResultObj.IS_LOGIN;
+        }else {
+            return ResultObj.UN_LOGIN;
+        }
+    }
 }
