@@ -1,5 +1,5 @@
 # erpboot后端服务
-
+该项目使用springboot开发并集成shiro+mybaitsplus+redis+fastdfs+maven，最终部署到linux服务器上
 ---
 #### V1.0.0
 
