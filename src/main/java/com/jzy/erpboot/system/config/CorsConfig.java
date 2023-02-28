@@ -9,11 +9,6 @@ import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * @program: 0812erp  解决跨域的问题
- * @author: 雷哥
- * @create: 2020-01-04 10:29
- **/
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {

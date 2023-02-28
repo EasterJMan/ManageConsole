@@ -1,12 +1,11 @@
 package com.jzy.erpboot.system.config;
 
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-/**
- * @program: redis-code
- * @author: 雷哥
- * @create: 2020-01-02 14:42
- **/
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializationContext;
 
 @Configuration
 public class RedisConfig {

@@ -13,7 +13,7 @@ import java.util.UUID;
 
 /**
  * @program: 0812erp
- * @author: 雷哥
+ * @author: shuke
  * @create: 2020-01-04 10:03
  **/
 @Configuration
@@ -23,8 +23,8 @@ public class TokenWebSessionManager   extends DefaultWebSessionManager {
 
     @Override
     protected Serializable getSessionId(ServletRequest request, ServletResponse response) {
-        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
-        System.out.println(httpServletRequest.getRequestURI());
+//        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
+//        System.out.println(httpServletRequest.getRequestURI());
         //从头里面得到请求TOKEN 如果不存在就生成一个
         String header = WebUtils.toHttp(request).getHeader(TOKEN_HEADER);
         if (StringUtils.hasText(header)) {

@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @program: 0812erp
- * @author: 雷哥
+ * @author: shuke
  * @create: 2020-01-13 17:14
  **/
 @Configuration

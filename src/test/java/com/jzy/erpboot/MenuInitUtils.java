@@ -14,7 +14,7 @@ class MenuInitUtils {
 
     @Test
     void contextLoads() {
-        menuService.save(new Menu(1,0,"topmenu","business","系统管理","fa fa-home","","",0,1,1));
+//        menuService.save(new Menu(1,0,"topmenu","business","系统管理","fa fa-home","","",0,1,1));
     }
 
 }
